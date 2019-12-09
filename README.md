@@ -1,0 +1,1 @@
+BOOTPRINT X2 is an edge computing development platform based on the horizon Sunrise 2.0, which meets the interface standard of 96Boards.BOOTPRINT X2 can support partners and users in AIoT field to carry out product evaluation, prototype development, edge computing solution construction and other work, and help the product to be launched quickly
