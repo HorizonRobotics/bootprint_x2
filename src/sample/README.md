@@ -3,7 +3,7 @@
 ## x2
 CP(Co-Processor) Deploy package
 
-### Ability:
+### Full Ability:
 Output face detection and tracking id, head detection, body detection, body skeleton.
 
 ### How to deploy
@@ -19,7 +19,7 @@ Render face/head/body bbox, face trackid, body skeleton.
 ### How to deploy
 Step1: load related drivers.  
 > cd dragonboard410c/ap_base  
-> sudo ./410c_bif_depoly.sh
+> sudo ./410c_bif_depoly.sh  
 > sudo ./single_pix_stream.sh 
 
 Step2: start rendering engine.
