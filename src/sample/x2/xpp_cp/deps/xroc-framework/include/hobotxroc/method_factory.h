@@ -1,0 +1,1 @@
+/home/gss/workspace/gitlab/common/xroc/framework/include/hobotxroc/method_factory.h
