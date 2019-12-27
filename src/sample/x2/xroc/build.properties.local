@@ -1,0 +1,11 @@
+platform linux
+
+architecture aarch64
+
+vendor linaro
+
+toolchain gcc-6.5.0
+
+cmake_c_compiler /opt/gcc-linaro-6.5.0-2018.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-gcc
+cmake_cxx_compiler /opt/gcc-linaro-6.5.0-2018.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-g++
+
