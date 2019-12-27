@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/internal_utils.cmake)
 
-SET(PROPERTY_FILE "${CMAKE_CURRENT_SOURCE_DIR}/build.properties")
 SET(PROPERTY_FILE_LOCAL "${CMAKE_CURRENT_SOURCE_DIR}/build.properties.local")
 SET(GRADLE_DEFAULT_CMD "./gradlew")
 SET(GRADLE_WIN_CMD "gradlew.bat")
