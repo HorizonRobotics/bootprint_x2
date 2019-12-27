@@ -22,14 +22,11 @@ http://gallery.hobot.cc/download/aiot/toolchain/x2j2-aarch64/project/snapshot/li
   如在公司外部，请联系技术支持人员获取工具链。
   工具链压缩包-sha256值：63e35c43452bca1761751ab7a6af35d88b8f36a8f906c12e4dd284a06309d37f
 
-#### 1.1.3 指定工具链配置
-* Linux X86 local 编译
-  `cp build.properties.local.x86 build.properties.local`
-
+#### 1.1.3 交叉编译
 * X2 交叉编译 
-  `cp build.properties.local.x86 build.properties.local`
+  `build.properties.local` 默认是 X2交叉编译工具链
 
-* 执行编译
+* 执行交叉编译
   推荐创建编译目录，如代码根目录 `mkdir build`
   `cd build & cmake ../`
   `make`

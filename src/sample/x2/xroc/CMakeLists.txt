@@ -7,80 +7,22 @@ project(xroc-framework-example)
 
 option(RELEASE_LIB "build version of release" ON)
 
+set(CMAKE_C_COMPILER aarch64-linux-gnu-gcc)
+set(CMAKE_CXX_COMPILER aarch64-linux-gnu-g++)
+
 if (${RELEASE_LIB})
     set(CMAKE_BUILD_TYPE Release)
 else ()
     set(CMAKE_BUILD_TYPE Debug)
 endif ()
 
-if (${PLATFORM_MAC})
-    add_definitions(-DHR_POSIX)
-    add_definitions(-DHR_MAC)
-elseif (${PLATFORM_LINUX})
-    add_definitions(-DHR_POSIX)
-    add_definitions(-DHR_LINUX)
-    if(NOT(${arch} STREQUAL "default") AND NOT(${arch} STREQUAL "x86"))
-        if(${arch} STREQUAL "arm_hi3519")
-            list(APPEND CMAKE_C_FLAGS " -mcpu=cortex-a17.cortex-a7 -mfloat-abi=softfp -mfpu=neon-vfpv4 ")
-            add_definitions(-DHR_HI3519)
-        elseif(${arch} STREQUAL "armhf")
-            list(APPEND CMAKE_C_FLAGS " -marm -mfloat-abi=hard -mfpu=neon ")
-        elseif(${arch} STREQUAL "aarch64")
-            list(APPEND CMAKE_C_FLAGS "-march=armv8-a -mcpu=cortex-a53 ")
-        elseif (${arch} STREQUAL "armv8l")
-            # x2 32 soc
-            add_definitions(-DX2)
-        else()
-            list(APPEND CMAKE_C_FLAGS " -marm -mfloat-abi=softfp -mfpu=neon ")
-        endif()
-    else()   # linux on x86?
-        list(APPEND CMAKE_C_FLAGS " -msse4.2 ")
-    endif()
-elseif (${PLATFORM_ANDROID})
-    set(ENABLE_NEON "true")
-    add_definitions(-DENABLE_OMP)
-    add_definitions(-DHR_POSIX)
-    add_definitions(-DHR_ANDROID)
-elseif (${PLATFORM_WIN})
-    set(CMAKE_CXX_FLAGS_RELEASE "/MD")
-    set(CMAKE_CXX_FLAGS_DEBUG "/MDd")
-    add_definitions(-DHR_WIN)
-    add_definitions(-D_MBCS)
-    add_definitions(-DHOBOT_EXPORTS)
-else ()
-    message(FATAL_ERROR "invoke cmake with -DPLATFORM_MAC=TRUE|-DPLATFORM_LINUX=TRUE|-DPLATFORM_ANDROID=TRUE|-DPLATFORM_WIN=TRUE")
-    return()
-endif()
+
+add_definitions(-DHR_POSIX)
+add_definitions(-DHR_LINUX)
+
+list(APPEND CMAKE_C_FLAGS "-march=armv8-a -mcpu=cortex-a53 ")
+
 message("CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}" )
-
-option(USE_ENCRYPT "whether to use hobot aes encrypt" OFF)
-if (NOT ${USE_ENCRYPT})
-    add_definitions(-DNO_ENCRYPT)
-    message("not use hobot aes encrypt")
-else ()
-    message("use hobot aes encrypt")
-endif()
-
-option(USE_OMP "whether to use omp" OFF)
-if (NOT ${USE_OMP})
-    add_definitions(-DNO_OMP)
-    message("not use omp..")
-else ()
-    message("use omp..")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp" )
-endif ()
-
-option(IPC_VER "whether to use omp" OFF)
-if (NOT ${IPC_VER})
-    add_definitions(-DNOIPC_VER)
-    message("not ipc ver..")
-else ()
-    message("ipc ver..")
-    add_definitions(-DUSE_ZLOG)
-    message("use zlog....")
-    add_definitions(-DNO_OMP)
-    message("not use omp....")
-endif ()
 
 set(CMAKE_CXX_STANDARD 11)
 
@@ -104,9 +46,6 @@ include_directories(
         include/timer
 )
 
-include_directories(SYSTEM /usr/include/python2.7)
-
-
 message("add src files ...")
 
 #add_library(xroc-framework STATIC ${SOURCE_FILES})
@@ -129,6 +68,5 @@ install(FILES
         ${PROJECT_SOURCE_DIR}/include/hobotxroc/profiler.h
         DESTINATION ${MY_OUTPUT_ROOT}/include/hobotxroc)
 
-#install(TARGETS     ${PROJECT_NAME}
-#        DESTINATION ${MY_OUTPUT_ROOT}/lib)
+
 
