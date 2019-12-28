@@ -41,7 +41,7 @@ http://gallery.hobot.cc/download/aiot/toolchain/x2j2-aarch64/project/snapshot/li
 ### 2.1 XRoc-Framework 使用指南    
 #### 2.1.1 XRoc SDK使用
 xroc sdk使用者统一一种接口，可以获取所有功能SDK的结果。
-c++语言版本 XRoc SDK接口定义在lib/[*工具链*]/xroc xroc_sdk.h
+c++语言版本 XRoc SDK接口定义在 deps/[*工具链*]/xroc xroc_sdk.h
 ##### 2.1.1.1 XRoc SDK接口定义 
 ```c
 namespace HobotXRoc {

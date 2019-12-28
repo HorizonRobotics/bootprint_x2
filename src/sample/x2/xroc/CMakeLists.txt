@@ -38,19 +38,11 @@ list(APPEND CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++11")
 string(REGEX REPLACE ";" " " CMAKE_C_FLAGS ${CMAKE_C_FLAGS})
 string(REGEX REPLACE ";" " " CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
 
+message("add xroc lib  ...")
+include_directories(${CMAKE_CURRENT_LIST_DIR}/include)
+link_directories("${CMAKE_CURRENT_LIST_DIR}/deps/${suffix}/xroc-framework/lib")
 
-include_directories(
-        include
-        include/common
-        include/log
-        include/timer
-)
-
-message("add src files ...")
-
-#add_library(xroc-framework STATIC ${SOURCE_FILES})
-
-add_subdirectory(example/bbox_filter)
+add_subdirectory(example_bbox_filter)
 
 
 if(NOT ${PARENT_BUILD})
@@ -59,14 +51,7 @@ endif()
 
 set(MY_OUTPUT_ROOT ${OUTPUT_ROOT}/${PROJECT_NAME})
 
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/hobotxsdk
-        DESTINATION ${MY_OUTPUT_ROOT}/include/
-        FILES_MATCHING PATTERN "*.h")
-install(FILES
-        ${PROJECT_SOURCE_DIR}/include/hobotxroc/method.h
-        ${PROJECT_SOURCE_DIR}/include/hobotxroc/method_factory.h
-        ${PROJECT_SOURCE_DIR}/include/hobotxroc/profiler.h
-        DESTINATION ${MY_OUTPUT_ROOT}/include/hobotxroc)
+
 
 
 
