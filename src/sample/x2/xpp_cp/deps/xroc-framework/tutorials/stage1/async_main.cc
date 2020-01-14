@@ -1,11 +1,3 @@
-/*
- * @Author: your name
- * @Date: 2020-01-13 23:25:20
- * @LastEditTime : 2020-01-13 23:25:35
- * @LastEditors  : Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /common/xroc/tutorials/stage1/async_main.cc
- */
 /**
  * @copyright Copyright (c) 2020 Horizon Robotics. All rights reserved.
  * @file      main.cc
@@ -15,17 +7,17 @@
  * @date      2020-01-08
  */
 
+#include "callback.h"
+#include "filter_param.h"
+#include "hobotxroc/xroc_config.h"
+#include "hobotxsdk/xroc_error.h"
+#include "hobotxsdk/xroc_sdk.h"
+#include "method/b_box.h"
 #include <chrono>
 #include <iostream>
 #include <memory>
 #include <string>
 #include <thread>
-#include "hobotxroc/xroc_config.h"
-#include "hobotxsdk/xroc_error.h"
-#include "hobotxsdk/xroc_sdk.h"
-#include "callback.h"
-#include "filter_param.h"
-#include "method/b_box.h"
 
 int main(int argc, char const *argv[]) {
   using HobotXRoc::BaseData;
@@ -62,10 +54,10 @@ int main(int argc, char const *argv[]) {
   std::cout << "BBoxFilter_A Method Version : "
             << flow->GetVersion("BBoxFilter_A") << std::endl;
 
-  float x1{0};   // BBox(框)的左上角横坐标
-  float y1{20};  // BBox(框)的左上角纵坐标
-  float x2{0};   // BBox(框)的右上角横坐标
-  float y2{50};  // BBox(框)的右上角纵坐标
+  float x1{0};  // BBox(框)的左上角横坐标
+  float y1{20}; // BBox(框)的左上角纵坐标
+  float x2{0};  // BBox(框)的右上角横坐标
+  float y2{50}; // BBox(框)的右上角纵坐标
   // 框的面积计算公式:(x2-x2)*(y2-y1)
   if (argc == 2) {
     std::cout << "***********************" << std::endl

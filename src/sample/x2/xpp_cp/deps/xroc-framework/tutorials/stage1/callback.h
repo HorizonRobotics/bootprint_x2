@@ -1,11 +1,3 @@
-/*
- * @Author: your name
- * @Date: 2020-01-13 23:26:00
- * @LastEditTime: 2020-01-13 23:26:01
- * @LastEditors: your name
- * @Description: In User Settings Edit
- * @FilePath: /common/xroc/tutorials/stage1/callback.h
- */
 /**
  * @copyright Copyright (c) 2020 Horizon Robotics. All rights reserved.
  * @file      main.cc

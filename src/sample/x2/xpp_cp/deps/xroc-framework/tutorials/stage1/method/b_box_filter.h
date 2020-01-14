@@ -1,11 +1,3 @@
-/*
- * @Author: your name
- * @Date: 2020-01-13 22:13:24
- * @LastEditTime : 2020-01-13 22:13:40
- * @LastEditors  : Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /common/xroc/tutorials/stage1/method/b_box_filter.h
- */
 /**
  * @copyright Copyright (c) 2020 Horizon Robotics. All rights reserved.
  * @file      b_box_filter.h
