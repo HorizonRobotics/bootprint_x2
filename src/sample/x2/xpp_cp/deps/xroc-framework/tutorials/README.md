@@ -1,12 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2020-01-13 23:55:16
- * @LastEditTime : 2020-01-13 23:59:49
- * @LastEditors  : Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /bootprint_x2/src/sample/x2/xpp_cp/deps/xroc-framework/tutorials/README.md
- -->
-
 # Overview  
 
 ## XRoc Framework是什么
