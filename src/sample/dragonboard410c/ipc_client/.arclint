@@ -1,0 +1,8 @@
+{
+    "linters": {
+        "golang": {
+              "type": "golint",
+              "include": "(\\.go$)"
+        }
+    }
+}

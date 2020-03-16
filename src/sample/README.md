@@ -23,7 +23,8 @@ Render face/head/body bbox, face trackid, body skeleton.
 
 ### Get Ap packages
 > cd src/sample/dragonboard410c/  
-> tar czf ap_base.tgz ap_base  
+> tar czf ap_base.tgz ap_base
+> cd ipc_client 
 > tar czf XppClientMini.tgz XppClientMini  
 
 ### How to deploy
