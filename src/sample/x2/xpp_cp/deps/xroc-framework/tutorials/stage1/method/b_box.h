@@ -12,6 +12,7 @@
 
 #include <string>
 #include "hobotxsdk/xroc_data.h"
+#include <iostream>
 
 namespace hobot {
 namespace vision {
